@@ -1,0 +1,7 @@
+[package]
+name = "hola_hola"
+version = "0.1.0"
+authors = ["Quintin Andrew Castillo <quintin.castillo@nyu.edu>"]
+edition = "2018"
+
+[dependencies]
