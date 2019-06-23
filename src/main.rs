@@ -1,32 +1,31 @@
+#[derive(Debug)]
+struct Structure(i32);
+
+#[derive(Debug)]
+struct Deep(Structure);
+
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
 fn main() {
-    // This is an example of a line comment
-    // Notice how there are two slashes at the beginning of the line
-    println!("Hello, world!");
-    println!("I'm a Rustacean!");
+    // Printing with '{:?}' is similar to with '{}'
+    println!("{:?} months in a year.", 12);
+    println!("{1:?} {0:?} is the {actor:?} name.",
+             "Schwarzeneggrolls",
+             "AhhnohlDD",
+             actor = "gubernator's");
 
-    println!("{} days", 31);
-    println!("{0}, this is {1}. {1} this is {0}", "Alice", "Bob");
+    println!("Now {:?} will print", Structure(3));
+    println!("Now the deep {:?} shall print!", Deep(Structure(32)) );
 
-    println!("{subject} {verb} {object}",
-             object="the lazy dog",
-             subject="the quick brown fox",
-             verb="jumps over");
+    // Pretty printing
+    let name = "Mary";
+    let age = 17;
+    let madonna = Person{name, age};
 
-    // Special formatting
-    println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
-
-    // output "     1"
-    println!("{number:>width$}", number=1, width=6);
-    // output "000001"
-    println!("{number:>0width$}", number=1, width=6);
-    println!("My name is {0}, {1} {0}", "Bond", "James");
-
-    #[allow(dead_code)]
-    struct Structure(i32);
-
-//    println!("This struct `{}` won't print...", Structure(3));
-
-    println!("Pi is roughly {:.*}", 3, 3.14159365358979);
-
+    println!("Pretty name, {:#?}", madonna);
 }
 
