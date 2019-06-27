@@ -1,5 +1,3 @@
-use std::fmt;
-
 fn main() {
     let v = List(vec![1, 2, 3]);
     println!("{}", v);
@@ -30,3 +28,5 @@ impl fmt::Display for List {
         write!(f, "]")
     }
 }
+
+use std::fmt;
